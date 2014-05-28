@@ -13,7 +13,7 @@ module.exports = function (pkg, config) {
   }
 
   if('object' === typeof pkg) {
-    if(pkg.tarballUrl) return pkg.tarballUrl
+    if(pkg.tarball) return pkg.tarball
     if(pkg.name && pkg.version)
       return mvUrl(pkg.name, pkg.version)
   }
