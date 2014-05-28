@@ -8,9 +8,12 @@ module.exports = function (pkg, config) {
   var registry = config.registry || 'https://registry.npmjs.org'
   var name, version, m
   //pkg
-  if('object' === typeof pkg && pkg.name && pkg.version) {
-    name = pkg.name
-    version = pkg.version
+  if('object' === typeof pkg) {
+    if(pkg.tarballUrl) return pkg.tarballUrl
+    if(pkg.name && pkg.version) {
+      name = pkg.name
+      version = pkg.version
+    }
   }
   //module@version
   else if(m = /^([\w._-]+)@(.*)$/.exec(pkg)) {
@@ -29,7 +32,7 @@ module.exports = function (pkg, config) {
     return pkg
   }
   
-  throw new Error('loading modules from format:' + pkg + 'not yet implemented')
+  throw new Error('loading modules from format:' + JSON.stringify(pkg) + 'not yet implemented')
 }
 
 
