@@ -15,7 +15,7 @@ t('highlight.js@8.0.0', 'https://registry.npmjs.org/highlight.js/-/highlight.js-
 t('JSONStream@6.2.0', 'https://registry.npmjs.org/JSONStream/-/JSONStream-6.2.0.tgz')
 t({name: 'JSONStream', version: '6.2.0'},
   'https://registry.npmjs.org/JSONStream/-/JSONStream-6.2.0.tgz')
-t({tarballUrl: 'https://registry.npmjs.org/JSONStream/-/JSONStream-6.2.0.tgz'},
+t({tarball: 'https://registry.npmjs.org/JSONStream/-/JSONStream-6.2.0.tgz'},
   'https://registry.npmjs.org/JSONStream/-/JSONStream-6.2.0.tgz')
 //git urls are already tested in npm-github-url-resolve
 
