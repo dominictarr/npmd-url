@@ -1,0 +1,21 @@
+{
+  "name": "npmd-url",
+  "description": "",
+  "version": "0.0.0",
+  "homepage": "https://github.com/dominictarr/npmd-url",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dominictarr/npmd-url.git"
+  },
+  "dependencies": {
+    "npm-github-resolve-url": "~0.0.1"
+  },
+  "devDependencies": {
+    "tape": "~2.13.1"
+  },
+  "scripts": {
+    "test": "set -e; for t in test/*.js; do node $t; done"
+  },
+  "author": "Dominic Tarr <dominic.tarr@gmail.com> (http://dominictarr.com)",
+  "license": "MIT"
+}
