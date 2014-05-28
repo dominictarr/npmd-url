@@ -8,18 +8,18 @@ module.exports = function (pkg, config) {
   var registry = config.registry || 'https://registry.npmjs.org'
   var name, version, m
   //pkg
+  function mvUrl(name, version) {
+    return registry + '/' + name + '/-/' + name + '-' + version + '.tgz'
+  }
+
   if('object' === typeof pkg) {
     if(pkg.tarballUrl) return pkg.tarballUrl
-    if(pkg.name && pkg.version) {
-      name = pkg.name
-      version = pkg.version
-    }
+    if(pkg.name && pkg.version)
+      return mvUrl(pkg.name, pkg.version)
   }
   //module@version
   else if(m = /^([\w._-]+)@(.*)$/.exec(pkg)) {
-    name = m[1]
-    version = m[2]
-    return registry + '/' + name + '/-/' + name + '-' + version + '.tgz'
+    return mvUrl(m[1], m[2])
   }
 
   //handle multilpe type of github urls,
